@@ -1,4 +1,4 @@
-#real-type
+#real-types
 
 **Converts strings to corresponding types.**
 
