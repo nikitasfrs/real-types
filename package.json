@@ -11,7 +11,8 @@
     "prepublishOnly": "npm test && npm run build",
     "dev": "webpack --progress --colors --watch --mode=prod",
     "test": "npm run build && nyc mocha --compilers js:babel-core/register --no-colors ./test/*.test.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+	"prepush": "npm run test"
   },
   "author": "Nikitas Frantzeskakis <nikitas.frantzeskakis@gmail.com>",
   "license": "MIT",
@@ -42,7 +43,9 @@
     "type": "git",
     "url": "https://github.com/nikitasfrs/real-types.git"
   },
-  "czConfig": {
-	  "path": "node_modules/cz-conventional-changelog"
+  "config": {
+	  "commitizen": {
+		  "path": "node_modules/cz-conventional-changelog"
+	  }
   }
 }
