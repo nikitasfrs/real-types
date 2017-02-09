@@ -6,17 +6,17 @@
  *
  * @author Nikitas Frantzeskakis
  */
-export default function normalize(data, nullOnly) {
+export default function normalize(data) {
     function isArray(item) {
         return Array.isArray(item)
     }
     function isObject(item) {
         return (item != null && typeof item == 'object');
     }
-    function checkBool(item) {
+    function isBool(item) {
         return (String(item) === 'true' || String(item) === 'false');
     }
-    function checkNumber(item) {
+    function isNumber(item) {
         if (item === "") {
             return false;
         }
@@ -24,23 +24,23 @@ export default function normalize(data, nullOnly) {
     }
     function convert(cur) {
         if (cur === undefined || cur === null) {
-            return (nullOnly) ? null : cur;
+            return cur;
         }
         let item = cur;
         if (cur.trim) {
             item = cur.trim();
         }
-        if (checkBool(item)) {
+        if (isBool(item)) {
             return (item === true || item === 'true');
         } else if (isArray(item) || isObject(item)) {
             return normalize(item);
-        } else if (checkNumber(item)) {
+        } else if (isNumber(item)) {
             return Number(item);
         } else {
             return cur;
         }
     }
-    // check array first since it is obj
+    // is array first since it is obj
     if (isArray(data)) {
         return data.map((item) => {
             return convert(item);

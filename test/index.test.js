@@ -86,9 +86,3 @@ describe('Edge cases', function () {
         assert.equal(normalize("\ttrue\n"), true);
     });
 });
-describe('Check nullOnly', function () {
-    it('should convert undefined value to null when true', () => {
-        assert.equal(normalize(undefined, true), null);
-        assert.equal(normalize(undefined), undefined);
-    });
-});
