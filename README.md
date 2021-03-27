@@ -29,7 +29,7 @@ const example = {
 console.log(convert(example));
 ```
 
-Executing code above will print:
+Above code will print:
 ```
 {
     foo: false,
