@@ -1,6 +1,6 @@
 # real-types
 
-_Converts strings to corresponding types._ 
+_Converts strings to the corresponding types._ 
 
 [![travis build](https://img.shields.io/travis/nikitasfrs/real-types.svg)](https://travis-ci.org/nikitasfrs/real-types)
 
